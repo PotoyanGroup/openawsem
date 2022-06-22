@@ -1,8 +1,9 @@
-from simtk.openmm.app import *
-from simtk.openmm import *
-from simtk.unit import *
+import openmm
+from openmm.app import *
+from openmm import *
+from openmm.unit import *
 import numpy as np
-from simtk.unit.quantity import Quantity
+from openmm.unit.quantity import Quantity
 import pandas as pd
 from Bio.PDB.Polypeptide import three_to_one
 
