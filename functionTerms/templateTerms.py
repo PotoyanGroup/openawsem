@@ -157,7 +157,8 @@ def fragment_memory_term(oa, k_fm=0.04184, frag_file_list_file="./frag.mem", npy
             assert(ij_sep > 0)
             frag_table[index] = raw_frag_table[i][ij_sep]
             interaction_pair_to_bond_index[(i,j)] = index
-        np.save(frag_table_file, (frag_table, interaction_list, interaction_pair_to_bond_index))
+        
+        #np.save(frag_table_file, (frag_table, interaction_list, interaction_pair_to_bond_index)) ### Use for Colab Run
         print(f"All gro files information have been stored in the {frag_table_file}. \
             \nYou might want to set the 'UseSavedFragTable'=True to speed up the loading next time. \
             \nBut be sure to remove the .npy file if you modify the .mem file. otherwise it will keep using the old frag memeory.")
