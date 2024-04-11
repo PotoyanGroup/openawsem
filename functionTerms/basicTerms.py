@@ -2,9 +2,18 @@ from openmm.app import *
 from openmm import *
 from openmm.unit import *
 import numpy as np
-from Bio.PDB.Polypeptide import one_to_three
+#from Bio.PDB.Polypeptide import one_to_three
+from Bio.PDB.Polypeptide import index_to_three, index_to_one, aa3, aa1
 import pandas as pd
-from Bio.PDB.Polypeptide import three_to_one
+#from Bio.PDB.Polypeptide import three_to_one
+
+# Bio.PDB.Polypeptide one_to_three and three_to_one are gone in Bio > 1.8
+# replacing as follows
+def one_to_three(res):
+  return index_to_three(aa1.index(res))
+
+def three_to_one(res):
+  return index_to_one(aa3.index(res))
 
 def con_term(oa, k_con=50208, bond_lengths=[.3816, .240, .276, .153], forceGroup=20):
     # add con forces

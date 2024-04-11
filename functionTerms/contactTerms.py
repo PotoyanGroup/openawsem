@@ -5,8 +5,12 @@ from openmm.unit import *
 import numpy as np
 from openmm.unit.quantity import Quantity
 import pandas as pd
-from Bio.PDB.Polypeptide import three_to_one
+#from Bio.PDB.Polypeptide import three_to_one
+from Bio.PDB.Polypeptide import index_to_three, index_to_one, aa3, aa1
 
+
+def three_to_one(res):
+  return index_to_one(aa3.index(res))
 
 gamma_se_map_1_letter = {   'A': 0,  'R': 1,  'N': 2,  'D': 3,  'C': 4,
                             'Q': 5,  'E': 6,  'G': 7,  'H': 8,  'I': 9,
